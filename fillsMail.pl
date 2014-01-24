@@ -10,10 +10,11 @@ if ($ARGV[0])
     my $dbh = dbConnect();
 
 
-    #Getting emails list from the file
-    open (MAILF, $emails_file) or die "\nERROR: Cannot open specified file: $!\n";
-    my @emails = <MAILF>;
-    close MAILF;
+    #grab emails from the daily input files
+    open (INPUT, $emails_file) or die "Couldn't open file $emails_file, $!";
+    my @emails = <INPUT>;
+    close INPUT;
+	#removes any trailing string that corresponds to the current value of $/(new line character)
     chomp(@emails);
 
 	#sql statement of the placeholder for bindValues
@@ -27,6 +28,6 @@ if ($ARGV[0])
 }
 else
 {
-    print "\nproper command: fillsMail.pl emails_file\n";
+    print "proper command: fillsMail.pl emails_file\n";
     exit -1;
 }

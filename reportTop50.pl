@@ -36,7 +36,7 @@ sub GrowthRate
 		#simulation purpose use '2013-06-19' instead of CURDATE()
 		my $sql = "SELECT SUM(Addr_daily_count) as Thirty_day_counts FROM daily_count
 				   WHERE Domain = ? 
-				   AND Date >= DATE_SUB('2013-06-19', INTERVAL 30 DAY)";
+				   AND Date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)";
 				   
 		my @sum_hashref = query($dbh, $sql, $_->{'Domain'});
 		my $sum_thirty_days = $sum_hashref[0]{'Thirty_day_counts'};
