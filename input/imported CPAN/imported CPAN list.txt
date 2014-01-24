@@ -1,0 +1,15 @@
+
+#These CPAN modules are required to randomly generate the email addresses to fill up the mailing table
+
+
+
+1.  File::RandomLine - Retrieve random lines from a file (for randomly select domain names from a domain list)
+
+http://search.cpan.org/~dagolden/File-RandomLine-0.20/lib/File/RandomLine.pm
+
+
+2.  String::Random - Perl module to generate random strings based on a pattern (for random email address generation)
+
+http://search.cpan.org/~shlomif/String-Random-0.25/lib/String/Random.pm
+
+
